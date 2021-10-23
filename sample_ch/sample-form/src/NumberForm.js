@@ -6,6 +6,8 @@ export default class NumberForm extends Component {
         this.state = { value: '' }
     }
 
+    // 値が変更された時のイベント
+
     doChange(e) {
         const curValue = e.target.value
 
@@ -13,10 +15,14 @@ export default class NumberForm extends Component {
         this.setState({ value: newValue })
     }
 
+    // 送信ボタンがクリックされた時のイベント
+
     doSubmit(e) {
         window.alert('値を送信: ' + this.state.value)
         e.preventDefault()
     }
+
+    // 画面の表示部分
 
     render() {
         const doSubmit = (e) => this.doSubmit(e)
