@@ -9,7 +9,7 @@ export default class NumberForm extends Component {
     doChange(e) {
         const curValue = e.target.value
 
-        const newValue = curValue.replace(/^[-]?([1-9１-９]\d*|0)$/, '')
+        const newValue = curValue.replace(/[^0-9]/g, '')
         this.setState({ value: newValue })
     }
 
@@ -25,7 +25,7 @@ export default class NumberForm extends Component {
             <form onSubmit={doSubmit}>
                 <input type='text'
                     value={this.state.value}
-                    coChange={doChange} />
+                    onChange={doChange} />
                 <input type='submit' value='送信' />
             </form>
         )
